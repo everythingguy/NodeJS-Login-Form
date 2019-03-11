@@ -1,0 +1,16 @@
+{{#if success}}
+    <div class="alert alert-success">{{success}}</div>
+{{/if}}
+
+{{#if flash}}
+    <div class="alert alert-danger">{{flash}}</div>
+{{/if}}
+
+<form method="POST" action="/users/login">
+    <label>Username</label>
+    <input type="text" name="username" class="u-full-width">
+    <label>Password</label>
+    <input type="password" name="password" class="u-full-width">
+    <button type="button" class="btn btn-default" onclick="location.href='/users/register'" style="margin-left: 50%;">Create User</button>
+    <button type="submit" class="btn btn-default">Login</button>
+</form>

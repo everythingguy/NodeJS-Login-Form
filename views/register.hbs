@@ -1,0 +1,20 @@
+{{#if err}}
+    {{#each err}}
+        <div class="alert alert-danger">{{msg}}</div>
+    {{/each}}
+{{/if}}
+
+<form method="POST" action="/users/register">
+    <label>Name</label>
+    <input type="text" name="name" class="u-full-width">
+    <label>Email</label>
+    <input type="email" name="email" class="u-full-width">
+    <label>Username</label>
+    <input type="text" name="username" class="u-full-width">
+    <label>Password</label>
+    <input type="password" name="password" class="u-full-width">
+    <label>Verify Password</label>
+    <input type="password" name="passVerify" class="u-full-width">
+    <button type="button" class="btn btn-default" onclick="location.href='/users/login'" style="margin-left: 50%;">Back to Login</button>
+    <button type="submit" class="btn btn-default">Create Account</button>
+</form>
