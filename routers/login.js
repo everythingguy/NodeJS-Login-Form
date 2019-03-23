@@ -29,8 +29,8 @@ passport.use(new LocalStrategy(function(username, password, done) {
     .then(() => {
         //didn't find a user so the username is incorrect
         if(userData == null) {
-            console.log("Failed Login Attempt: Incorrect Username");
-            return done(null, false, { message: 'Incorrect username.' });
+            console.log("Failed Login Attempt: Incorrect Username or Password");
+            return done(null, false, { message: 'Incorrect Username or Password.' });
         }
         
         //found a user, are the passwords the same?
@@ -43,8 +43,8 @@ passport.use(new LocalStrategy(function(username, password, done) {
             } 
             //No
             else {
-                console.log("Failed Login Attempt: Incorrect Password");
-                return done(null, false, {message: 'Incorrect password.'})
+                console.log("Failed Login Attempt: Incorrect Incorrect Username or Password");
+                return done(null, false, {message: 'Incorrect Username or Password.'})
             }
         });
     });
