@@ -6,7 +6,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 
 //db
-const db = require("monk")('username:password@domain:port/dbName'); //set this*********************************************
+const db = require("monk")('username:password@domain:port/dbName'); //TODO: set this*********************************************
 const users = db.get('users');
 
 db.on('open', () => {

@@ -18,16 +18,16 @@
     "express-session": "^1.15.6",
     "express-validator": "^5.3.1",
     "fs": "0.0.1-security",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.7",
     "http": "0.0.0",
     "mongodb": "^3.1.13",
-    "monk": "^6.0.6",
+    "monk": "^7.3.4",
     "passport": "^0.4.0",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0"
   },
   "description": "A template for a login form",
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^2.0.7"
   }
 }
