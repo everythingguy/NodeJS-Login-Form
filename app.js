@@ -7,7 +7,6 @@ const validator = require("express-validator");
 const path = require("path");
 const exphbs = require("express-handlebars");
 const Handlebars = require("handlebars");
-const fs = require("fs");
 var flash = require("connect-flash");
 
 const app = express();
@@ -39,12 +38,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(validator({
-    errorFormatter: function(param, msg, value) {
+    errorFormatter: function (param, msg, value) {
         var namespace = param.split('.'),
-        root = namespace.shift(),
-        formParam = root;
+            root = namespace.shift(),
+            formParam = root;
 
-        while(namespace.length) {
+        while (namespace.length) {
             formParam += '[' + namespace.shift() + ']';
         }
 
@@ -61,7 +60,12 @@ app.use('/users', express.static(path.join(__dirname, 'private')));
 
 //set html view engine
 app.set('views', path.join(__dirname, "views"));
-app.engine('hbs', exphbs({ extname:'hbs', defaultLayout:'layout', layoutsDir: __dirname + "/views/layouts/", partialsDir: __dirname + "/views/partials/" }));
+app.engine('hbs', exphbs({
+    extname: 'hbs',
+    defaultLayout: 'layout',
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/"
+}));
 app.set('view engine', 'hbs');
 
 //ip firewall
@@ -108,17 +112,17 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
     }
 });
 
-Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
+Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
     lvalue = parseFloat(lvalue);
     rvalue = parseFloat(rvalue);
-        
+
     return {
         "+": lvalue + rvalue,
         "-": lvalue - rvalue,
         "*": lvalue * rvalue,
         "/": lvalue / rvalue,
         "%": lvalue % rvalue
-    }[operator];
+    } [operator];
 });
 
 //routes
