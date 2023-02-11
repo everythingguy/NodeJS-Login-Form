@@ -28,6 +28,6 @@
   },
   "description": "A template for a login form",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.20"
   }
 }
